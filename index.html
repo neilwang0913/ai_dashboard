@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><b>YOUR BRAND</b><small>AI AGENT · N REPOS</small></div>
+  <div class="title">
+    <h1>AI AGENT · STOP DOING IT BY HAND</h1>
+    <p>Skills, actions, reviewer, SDK and cookbooks — all wired to one agent.</p>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<main>
+  <section class="panel wide" style="--c:#f08a5d">
+    <div class="ph"><span class="tag">00</span><h2>YOUR REPO · AGENT GRAPH · every tool wired to @agent</h2><em id="graphCount"></em></div>
+    <div class="graphwrap">
+      <div class="legend" id="legend"></div>
+      <canvas id="graph"></canvas>
+    </div>
+  </section>
+
+  <section class="panel" style="--c:#f08a5d">
+    <div class="ph"><span class="tag">01</span><h2>SKILLS · how a real skill is built</h2><em>org/skills</em></div>
+    <div class="cols">
+      <ul class="tree" id="tree"></ul>
+      <div>
+        <pre class="box" id="skillmd"></pre>
+        <p class="muted">what the agent loads, when</p>
+        <div class="bar"><label>name + description <i>always</i></label><div><span id="b1"></span></div></div>
+        <div class="bar"><label>SKILL.md body <i>when it triggers</i></label><div><span id="b2"></span></div></div>
+        <div class="bar dim"><label>scripts · references <i>only if needed</i></label><div><span></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" style="--c:#5aa0f0">
+    <div class="ph"><span class="tag">02</span><h2>AGENT ACTION · @agent in any PR or issue</h2><em>signed commits</em></div>
+    <div class="cols">
+      <div class="box thread">
+        <b>#482 · checkout flaky on CI</b>
+        <div class="msg" id="msg"></div>
+      </div>
+      <div>
+        <p class="muted">branches</p>
+        <div class="branch"><small>main</small><div class="line" id="line"></div></div>
+        <ul class="steps" id="steps"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" style="--c:#e0556a">
+    <div class="ph"><span class="tag">03</span><h2>SECURITY REVIEW · every PR diff</h2><em>noise filtered</em></div>
+    <div class="cols">
+      <div class="box diff" id="diff"></div>
+      <div><p class="muted">findings</p><div id="findings"></div></div>
+    </div>
+  </section>
+
+  <section class="panel" style="--c:#4cc9b0">
+    <div class="ph"><span class="tag">04</span><h2>AGENT SDK (PYTHON) + COOKBOOKS</h2><em>your own app</em></div>
+    <div class="cols">
+      <pre class="box code" id="code"></pre>
+      <div class="box stream" id="stream"></div>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+</main>
+
+<footer class="ticker"><div id="ticker"></div></footer>
+<script src="app.js"></script>
+</body>
+</html>
